@@ -311,13 +311,14 @@ let quarters = 16;  // 4.00
  * @returns Returns sum of all as monetary value
  */
 function coinCounter (p, n, d, q) {
-    let penny = (p * 0.01);
-    let nickel = (n * 0.05);
-    let dime = (d * 0.10);
+    let penny = (p * 0.01);     // variables to covert numbers in to equal money values
+    let nickel = (n * 0.05);    // math is input amount * denomination
+    let dime = (d * 0.10);      // names are more descriptive but still tied to function input by first letter for clarity
     let quarter = (q * 0.25);
-    return (penny + nickel + dime + quarter).toFixed(2);
+    return (penny + nickel + dime + quarter).toFixed(2);    //uses `.toFixed()` to state the return should include 2 places after the decimal
 }
-console.log(`13a. Total amount of money: ${ coinCounter(pennies, nickels, dimes, quarters) }`);
-console.log(`13b. Test to show 2 decimal places ${coinCounter(0,0,0,4)}`);
+console.log(`13a. Total amount of money: $${ coinCounter(pennies, nickels, dimes, quarters) }`); // uses a double $$ first one is to add to console log
+console.log(`13b. Test to show 2 decimal places $${coinCounter(0,0,0,4)}`);                      // second $ with {} curly braces 
+                                                                                                 // is to declare a code block inside of template literal
 
 
