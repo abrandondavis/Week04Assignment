@@ -75,7 +75,15 @@ console.log(`1c. Average = ${calculateAverage(ages)}`);
 //      b. Use a loop to iterate through the array again and concatenate all the names together, separated by spaces.
 
 let names = ['Sam', 'Tommy', 'Tim', 'Sally', 'Buck', 'Bob'];
-console.log('2. ' + names.join(' ')); //Takes advantage of join function using a space as the seperator parameter
+
+let totalLetters = 0;                                                       // container for sum of letters
+for (let i = 0; i < names.length; i++) {                                    // for loop to execute code on each part of array
+  totalLetters += names[i].length;                                          // updates totalLetters as a sum for each name length
+}
+const averageLetters = totalLetters / names.length;                         // divides sum by length to get average
+console.log('2a. Average number of letters per name: ' + averageLetters);   // Could use toFixed or truncate to shorten answer here
+
+console.log('2b. ' + names.join(' ')); //Takes advantage of join function using a space as the seperator parameter
 
 
 
